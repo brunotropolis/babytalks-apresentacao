@@ -84,10 +84,10 @@ p.lead{font-size:clamp(15px,1.55vw,22px);line-height:1.55;color:var(--cream-dim)
 
 /* ---- COVER split (texto centralizado) ---- */
 .cover2{padding:0;flex-direction:row}
-.cover2 .cv-text{flex:1 1 54%;display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:clamp(30px,5vw,80px);position:relative;z-index:2}
+.cover2 .cv-text{flex:1 1 54%;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;
+  text-align:center;padding:clamp(30px,5vw,80px) clamp(20px,3vw,40px) clamp(30px,5vw,80px) clamp(30px,5vw,80px);position:relative;z-index:2}
 .cover2 .cv-photo{flex:1 1 46%;position:relative;overflow:hidden}
-.cover2 .cv-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.cover2 .cv-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.28);transform-origin:50% 74%}
 .cover2 .cv-photo::after{content:'';position:absolute;inset:0;
   background:linear-gradient(90deg,var(--navy),transparent 18%),linear-gradient(0deg,rgba(18,22,43,.3),transparent 40%)}
 .cover2 .cv-text .eyebrow{margin-left:auto;margin-right:auto}
@@ -298,7 +298,7 @@ p.lead{font-size:clamp(15px,1.55vw,22px);line-height:1.55;color:var(--cream-dim)
 @media (prefers-reduced-motion:reduce){*{transition-duration:.001s!important}#track{transition:none}}
 
 @media(max-width:900px){
-  .cover2{flex-direction:column}.cover2 .cv-photo{min-height:32vh;order:-1}.cover2 .cv-text{padding:6vh 26px 4vh}
+  .cover2{flex-direction:column}.cover2 .cv-photo{min-height:32vh;order:-1}.cover2 .cv-text{padding:6vh 26px 4vh;align-items:center}
   .split,.split.rev,.pub,.price-wrap,.media-wrap,.mk,.research-split{grid-template-columns:1fr;gap:20px}
   .figure{aspect-ratio:4/5;max-height:38vh}
   .figure img{object-position:50% 24%}
@@ -445,7 +445,7 @@ p.lead{font-size:clamp(15px,1.55vw,22px);line-height:1.55;color:var(--cream-dim)
     <span class="wm">PROGRAMA</span>
     <div class="wrap">
       <div class="eyebrow" data-r data-d="1">Os temas do evento</div>
-      <h2 data-r data-d="2">Cinco palestras que seguem a <span class="serif-it mg">linha do tempo da gestação.</span></h2>
+      <h2 data-r data-d="2">Cinco palestras que seguem<br>a <span class="serif-it mg">linha do tempo da gestação.</span></h2>
       <div class="tl">
         <div class="tl-line"></div><div class="tl-fill"></div>
         <div class="tl-steps">
