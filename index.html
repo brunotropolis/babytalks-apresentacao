@@ -84,10 +84,10 @@ p.lead{font-size:clamp(15px,1.55vw,22px);line-height:1.55;color:var(--cream-dim)
 
 /* ---- COVER split (texto centralizado) ---- */
 .cover2{padding:0;flex-direction:row}
-.cover2 .cv-text{flex:1 1 54%;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;
-  text-align:center;padding:clamp(30px,5vw,80px) clamp(20px,3vw,40px) clamp(30px,5vw,80px) clamp(30px,5vw,80px);position:relative;z-index:2}
+.cover2 .cv-text{flex:1 1 54%;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:clamp(30px,5vw,80px);position:relative;z-index:2}
 .cover2 .cv-photo{flex:1 1 46%;position:relative;overflow:hidden}
-.cover2 .cv-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.28);transform-origin:50% 74%}
+.cover2 .cv-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .cover2 .cv-photo::after{content:'';position:absolute;inset:0;
   background:linear-gradient(90deg,var(--navy),transparent 18%),linear-gradient(0deg,rgba(18,22,43,.3),transparent 40%)}
 .cover2 .cv-text .eyebrow{margin-left:auto;margin-right:auto}
@@ -317,9 +317,14 @@ p.lead{font-size:clamp(15px,1.55vw,22px);line-height:1.55;color:var(--cream-dim)
   .slide{justify-content:flex-start;padding-top:8vh;padding-bottom:8vh;height:auto;min-height:100vh}
   .slide [data-r]{opacity:1!important;transform:none!important}
   .bar-fill{width:var(--w)!important}
-  .tl-dot{background:var(--magenta)!important;border-color:var(--magenta)!important;color:var(--magenta)!important}
+  .tl-dot{border-color:var(--magenta)!important;color:var(--magenta)!important}
   #fs{position:fixed}
   .brandmark{font-size:clamp(44px,13vw,80px)}
+
+  /* textos centralizados, topicos/listas seguem a esquerda */
+  .wrap{text-align:center}
+  .pub-points,.two-box ul,.info-list,.price-list,.contact-info,.people,.chips,.mk-col{text-align:left}
+  .words{justify-content:center}
 }
 </style>
 </head>
@@ -636,6 +641,7 @@ p.lead{font-size:clamp(15px,1.55vw,22px);line-height:1.55;color:var(--cream-dim)
   // MOBILE: rolagem nativa, revela tudo, sem mecanica de tela cheia
   if(window.matchMedia('(max-width:900px)').matches){
     slides.forEach(s=>s.classList.add('active'));
+    document.querySelectorAll('[data-count]').forEach(el=>{el.textContent=el.dataset.count;});
     return;
   }
   slides.forEach((_,k)=>{const b=document.createElement('button');b.setAttribute('aria-label','Slide '+(k+1));b.onclick=()=>go(k);dotsWrap.appendChild(b);});
